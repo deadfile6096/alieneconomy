@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (gameState.balance >= cost) {
             return true;
         }
-        showNotification(`Not enough $FION! You need ${formatFION(cost)} $FION.`, false);
+        showNotification(`Not enough $UFO! You need ${formatFION(cost)} $UFO.`, false);
         return false;
     }
 
@@ -361,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="relative">
                 <img src="${good.image}" alt="${good.name}" class="w-full h-32 object-contain bg-gray-700 pixel-art">
                 <div class="absolute top-2 right-2 bg-purple-900 text-yellow-400 px-2 py-1 rounded-full text-xs font-bold">
-                    ${formatFION(good.price)} $FION
+                    ${formatFION(good.price)} $UFO
                 </div>
             </div>
             <div class="p-4">
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add capitalism points
         addCapitalismPoints(good.price / 2);
         
-        showNotification(`Sold one ${good.name} for ${formatFION(good.price)} $FION!`);
+        showNotification(`Sold one ${good.name} for ${formatFION(good.price)} $UFO!`);
         
         // Save game
         saveGame();
@@ -584,13 +584,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <div>
                             <div class="text-sm font-bold text-yellow-300">${trader.good.name}</div>
-                            <div class="text-xs">${formatFION(trader.good.price)} $FION</div>
+                            <div class="text-xs">${formatFION(trader.good.price)} $UFO</div>
                         </div>
                     </div>
                 </div>
                 
                 <button class="hire-trader-btn mt-4 w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded transition-colors" data-id="${trader.id}">
-                    Hire for ${formatFION(trader.hireCost)} $FION
+                    Hire for ${formatFION(trader.hireCost)} $UFO
                 </button>
             </div>
         `;
@@ -710,7 +710,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 name: "Cosmic Bank",
-                description: "Generates 10 $FION per minute per level.",
+                description: "Generates 10 $UFO per minute per level.",
                 image: "img/Buildings/IMG_20250523_202253.jpg",
                 baseCost: 400,
                 effect: "passiveIncome",
@@ -781,7 +781,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 ${building.level < building.maxLevel ? `
                 <button class="upgrade-building-btn mt-4 w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded transition-colors" data-id="${building.id}">
-                    ${building.level === 0 ? 'Build' : 'Upgrade'} for ${formatFION(upgradeCost)} $FION
+                    ${building.level === 0 ? 'Build' : 'Upgrade'} for ${formatFION(upgradeCost)} $UFO
                 </button>
                 ` : `
                 <button class="w-full bg-gray-600 text-white font-bold py-2 px-4 rounded" disabled>
@@ -918,7 +918,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Sell Planet button
     sellPlanetBtn.addEventListener('click', () => {
-        showModal('Are you sure?', 'Do you really want to sell your planet? Here, take 5 $FION and stop whining!');
+        showModal('Are you sure?', 'Do you really want to sell your planet? Here, take 5 $UFO and stop whining!');
         updateBalance(5);
         addCapitalismPoints(1);
         saveGame();
